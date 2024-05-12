@@ -304,7 +304,7 @@ if uploaded_file is not None:
     
       # Create the multi-vector retriever
       retriever = MultiVectorRetriever(
-          _vectorstore=vectorstore,
+          vectorstore=_vectorstore,
           docstore=store,
           id_key=id_key,
       )
@@ -330,7 +330,7 @@ if uploaded_file is not None:
           add_documents(retriever, image_summaries, images)
       return retriever
 
-    vectorstore = Chroma(collection_name="mm_rag_mistral_test",embedding_function=OpenAIEmbeddings(openai_api_key = openai.api_key))
+    vectorstore = Chroma(collection_name="mm_rag_mistrall",embedding_function=OpenAIEmbeddings(openai_api_key = openai.api_key))
 
 
     retriever_multi_vector_img=create_multi_vector_retriever(vectorstore,text_summaries,texts,table_summaries,tables,image_summaries,img_base64_list)
