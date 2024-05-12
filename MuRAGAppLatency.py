@@ -331,7 +331,7 @@ if uploaded_file is not None:
           add_documents(retriever, image_summaries, images)
       return retriever
 
-    vectorstore = Chroma(collection_name="mm_rag_mistral01",embedding_function=OpenAIEmbeddings(openai_api_key = openai.api_key))
+    vectorstore = Chroma(collection_name="mm_rag_mistral001",embedding_function=OpenAIEmbeddings(openai_api_key = openai.api_key))
 
 
     retriever_multi_vector_img=create_multi_vector_retriever(vectorstore,text_summaries,texts,table_summaries,tables,image_summaries,img_base64_list)
